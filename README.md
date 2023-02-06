@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# nextjs13-template
 
-## Getting Started
+## 概要
 
-First, run the development server:
+- 新規プロジェクトの際にクローンするなどして利用するもの
+- 開発プロジェクトの自由度を縛らない程度のものしか導入していないつもりです
+- フォーマッター等（eslint と prettier）導入済み
+  - prettierrc や eslintrc は各自でプロジェクトごとに改変してください
+- ディレクトリ構成はある程度整えてある
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 始め方
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- ターミナルを開いてプロジェクトのルートディレクトリで以下実行
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+  ```
+    //  各種必要なパッケージの導入
+    yarn install
+    //  開発サーバー起動、localhost:3000で見れるはず
+    yarn dev
+  ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- ファイル保存時に整形ツールが自動で整形できるように、以下のエディタの拡張機能をインストールする
+  - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+  - https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 導入ライブラリについて
 
-## Learn More
+### ESLint
 
-To learn more about Next.js, take a look at the following resources:
+- JavaScript や TypeScript の静的解析ツール
+- 構文エラーとかあれば書いてる途中で教えてくれる
+- `/.eslintrc.json`を編集することで独自ルールを設けることもできる
+  - 変数はキャメルケースで定義しなければならない
+  - boolean の変数は接頭辞として`is`が付いていなければいけない
+  - など
+- https://eslint.org/
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Prettier
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- 整形ツール、さまざまな言語に対応している
+  - JavaScript
+  - TypeScript
+  - HTML
+  - CSS
+  - Sass
+  - JSON
+  - Markdown
+  - YAML
+- `/.prettierrc`を編集することで整形ルールを儲けて、その通りに自動で整形させることができる
+  - シングルクォートをダブルクォートに置換する
+  - 120 文字で折り返す
+  - など
+- https://prettier.io/
