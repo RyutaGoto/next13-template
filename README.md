@@ -37,7 +37,8 @@
 
 ### Prettier
 
-- 整形ツール、さまざまな言語に対応している
+- 整形ツール
+- さまざまな言語に対応している
   - JavaScript
   - TypeScript
   - HTML
