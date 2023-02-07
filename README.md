@@ -51,3 +51,21 @@
   - 120 文字で折り返す
   - など
 - https://prettier.io/
+
+## ディレクトリ構成
+
+- /
+  - /.next : ビルドしたファイルの置き場（自動生成のため、手動で更新しないこと）
+  - /out : ビルド内容をもとに吐き出される静的ファイルの置き場（自動生成のため、手動で更新しないこと）
+  - /public : 写真などの素材置き場、img タグの src プロパティから`/public/hoge.png`を参照するときは`<img src="/hoge.png" />`でアクセスできる
+  - /src : 開発者が触るソースコードをまとめる場所
+    - /components : ユーザー定義のコンポーネント群
+      - SomeComponent.tsx : コンポーネントの中身
+      - index.ts : コンポーネント群のエントリーポイント(バレル)
+    - /pages : page 群
+    - /styles : page のスタイルシート群
+  - .eslintignore : eslint の対象から除外するファイルを明記するファイル
+  - .eslintrc.json : eslint が解析するルールを書くファイル
+  - .prettierrc : prettier が整形するルールを書くファイル
+  - next-config.json : Next.js のカスタムする設定を書くファイル
+  - tsconfig.json : TypeScript に関する設定を書くファイル
