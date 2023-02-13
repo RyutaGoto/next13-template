@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'"
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json,css}'",
+    "preinstall": "husky install"
   },
   "dependencies": {
     "next": "13.0.0",
@@ -27,5 +28,11 @@
     "lint-staged": "^13.1.1",
     "prettier": "^2.7.1",
     "typescript": "4.8.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn lint:fix",
+      "yarn format"
+    ]
   }
 }
